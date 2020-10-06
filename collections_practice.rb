@@ -42,10 +42,19 @@ def sum_array(array)
   sum
 end
 
-def add_s(array)
-  array.reject{|word|  word == array[1]}.map do |word|
-    word << "s"
-  end
-  array
-end
+# def add_s(array)
+#   array.reject{|word|  word == array[1]}.map do |word|
+#     word << "s"
+#   end
+#   array
+# end
 
+def add_s(array)
+  array.map do |word|
+    if word == array[1]
+      word + "s"
+    else
+      word
+    end
+  end
+end
